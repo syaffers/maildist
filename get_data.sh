@@ -1,8 +1,2 @@
-emailgroup=linkedin
-grep "Sun, " ~/.thunderbird/brsk18ox.default/Mail/Local\ Folders/$emailgroup >> raw/$emailgroup.txt
-grep "Mon, " ~/.thunderbird/brsk18ox.default/Mail/Local\ Folders/$emailgroup >> raw/$emailgroup.txt
-grep "Tue, " ~/.thunderbird/brsk18ox.default/Mail/Local\ Folders/$emailgroup >> raw/$emailgroup.txt
-grep "Wed, " ~/.thunderbird/brsk18ox.default/Mail/Local\ Folders/$emailgroup >> raw/$emailgroup.txt
-grep "Thu, " ~/.thunderbird/brsk18ox.default/Mail/Local\ Folders/$emailgroup >> raw/$emailgroup.txt
-grep "Fri, " ~/.thunderbird/brsk18ox.default/Mail/Local\ Folders/$emailgroup >> raw/$emailgroup.txt
-grep "Sat, " ~/.thunderbird/brsk18ox.default/Mail/Local\ Folders/$emailgroup >> raw/$emailgroup.txt
+fn="/home/syafiq/.thunderbird/brsk18ox.default/Mail/Local Folders/$1"
+grep "Date: " "$fn" | uniq | awk '{$1=""; print substr($0,2)}' > "raw/$1.txt"
