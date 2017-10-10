@@ -30,6 +30,7 @@ src
 
 *.swp
 *.map
+*.svg
 .idea/
 Read the Docs
 config.rst
